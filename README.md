@@ -45,8 +45,37 @@ in your Vim... I hope that in the near future more features become available as 
     concealed, so that when editing some line, you can always see "the real deal". In our haskell
     config, lots of good-looking unicode chars are shown, among them lambdas, type arrows, typeclass
     constraint arrows, has-type symbols (four dots), monadic bind, function composition, etc...
-    ```haskell
+    ``haskell
     map (λx → x+1) [1, 2, 3, 4]  ∷ Num a ⇒ [a]
     repl = forever (putStr "repl> " » getLine »= putStrLn)
     print = putStrLn ∘ show
-    ```
+    ``
+
+### Plugin-dependent features ###
+
+  * **Easy syntax and type-checking:** using the [GHC-Mod](https://github.com/eagletmt/ghcmod-vim)
+    plugin. It does require the ghc-mod Haskell package, which you can install symply using:
+    `cabal install ghc-mod`. This feature provides keybindings, which you can easily change by
+    editing the file "haskell-vim-plugin-dependent.vim".
+    - **F9** Checks the currently-edited file using GHC-Mod (saves it if needed) and opens the
+      QuickFix window in case any errors are found.
+    - **F12** Shows (in the status area) the type of the expression currently under the cursor.
+      By pressing F12 repeatedly, larger and larger expressions are selected.
+    - **\<leader\>hr** Clears the selection made by the show-type command above.
+    - **\<leader\>hl** Runs _HLint_ in the currently-edited file, showing any possible suggestions
+      in the QuickFix list.
+    - **\<leader\>hm** When over a _Template Haskell_ splice, expands it using ghc-mod expand and
+      shows the expansion in the QuickFix window.
+
+  * **Better syntax-based Haskell code-folding:** Vim has already some built-in syntax-based rules
+    for folding Haskell code, but they are not so good. We make it better by using the plugin
+    [vim-haskellFold](https://github.com/Twinside/vim-haskellFold), which shows type signatures
+    in the fold summary line, among other niceties.
+
+  * **Automatically indert the module name header in a file:** When you create a new file in Vim, by
+    using `:e File.hs`, the appropriate module name header will be inserted in the first line of the
+    newly-created file, like `module File where`. Actually, the plugin is more intelligent than
+    that, and uses heuristics to detect a hierarchical module name if you are inside a directory
+    hierarchy. For example, if you create a file `proj/src/Data/Sound/MyFilter.hs`, then the line
+    inserted will be `module Data.Sound.MyFilter where`.
+
