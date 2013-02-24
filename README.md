@@ -45,11 +45,11 @@ in your Vim... I hope that in the near future more features become available as 
     concealed, so that when editing some line, you can always see "the real deal". In our haskell
     config, lots of good-looking unicode chars are shown, among them lambdas, type arrows, typeclass
     constraint arrows, has-type symbols (four dots), monadic bind, function composition, etc...
-    ``haskell
+    ```haskell
     map (λx → x+1) [1, 2, 3, 4]  ∷ Num a ⇒ [a]
     repl = forever (putStr "repl> " » getLine »= putStrLn)
     print = putStrLn ∘ show
-    ``
+    ```
 
 ### Plugin-dependent features ###
 
@@ -57,19 +57,18 @@ in your Vim... I hope that in the near future more features become available as 
     plugin. It does require the ghc-mod Haskell package, which you can install symply using:
     `cabal install ghc-mod`. This feature provides keybindings, which you can easily change by
     editing the file "haskell-vim-plugin-dependent.vim".
-    - **F9** Checks the currently-edited file using GHC-Mod (saves it if needed) and opens the
-      QuickFix window in case any errors are found.
-    - **F12** Shows (in the status area) the type of the expression currently under the cursor.
-      By pressing F12 repeatedly, larger and larger expressions are selected.
+    - **F9**: Checks the current file using GHC-Mod (saves it if needed) and opens the QuickFix
+      window in case of any errors.
+    - **F12**: Shows the type of the expression under the cursor. By pressing F12 repeatedly,
+      larger expressions are selected.
     - **\<leader\>hr** Clears the selection made by the show-type command above.
     - **\<leader\>hl** Runs _HLint_ in the currently-edited file, showing any possible suggestions
       in the QuickFix list.
-    - **\<leader\>hm** When over a _Template Haskell_ splice, expands it using ghc-mod expand and
-      shows the expansion in the QuickFix window.
+    - **\<leader\>hm** Shows the expansion of a _Template Haskell_ splice in the QuickFix window.
 
   * **Better syntax-based Haskell code-folding:** Vim has already some built-in syntax-based rules
     for folding Haskell code, but they are not so good. We make it better by using the plugin
-    [vim-haskellFold](https://github.com/Twinside/vim-haskellFold), which shows type signatures
+    [vim-haskellFold](https://github.com/Twinside/vim-haskellFold), which _shows type signatures_
     in the fold summary line, among other niceties.
 
   * **Automatically indert the module name header in a file:** When you create a new file in Vim, by
