@@ -1,12 +1,11 @@
-" checks whether Vundle is present
-if(exists("g:bundle_dir"))
+" checks whether NeoBundle is present
+if(exists("g:neobundle#log_filename"))
     filetype off
 
     " Haskell bundles themselves
-    Bundle 'Shougo/vimproc'
-    Bundle 'eagletmt/ghcmod-vim'
-    Bundle 'Twinside/vim-haskellFold'
-    Bundle 'feuerbach/vim-hs-module-name'
+    NeoBundle 'eagletmt/ghcmod-vim'
+    NeoBundle 'Twinside/vim-haskellFold'
+    NeoBundle 'feuerbach/vim-hs-module-name'
 
     filetype plugin indent on
 
