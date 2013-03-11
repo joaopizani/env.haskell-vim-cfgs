@@ -15,13 +15,11 @@ if(exists("g:neobundle#log_filename"))
     " Haskell lushtags + tagbar
     if executable('lushtags')
         let g:tagbar_type_haskell = {
-            \ 'ctagsbin': 'lushtags',
-            \ 'ctagsargs': '--ignore-parse-error --',
+            \ 'ctagsbin': 'lushtags',   'ctagsargs': '--ignore-parse-error --',
             \ 'kinds': [
                 \ 'm:module:0', 'e:exports:1', 'i:imports:1', 't:declarations:0',
                 \ 'd:declarations:1', 'n:declarations:1', 'f:functions:0', 'c:constructors:0'
-            \ ],
-            \ 'sro': '.',
+            \ ],   'sro': '.',
             \ 'kind2scope': {'d': 'data', 'n': 'newtype', 'c': 'constructor', 't': 'type'},
             \ 'scope2kind': {'data': 'd', 'newtype': 'n', 'constructor': 'c', 'type': 't'}
         \ }
@@ -30,7 +28,7 @@ if(exists("g:neobundle#log_filename"))
     " key mappings - mappings for GHCMod
     " in the case of a haskell buffer, F12 is for type inference
     nnoremap <silent> <Leader>t :GhcModType<CR>
-    nnoremap <silent> <F12>     :GhcModType<CR>
+    nnoremap <silent> <F9>     :GhcModType<CR>
 
     nnoremap <silent> <Leader>hr :GhcModTypeClear<CR>
     nnoremap <silent> <Leader>hi :GhcModInfoPreview<CR>
@@ -38,8 +36,8 @@ if(exists("g:neobundle#log_filename"))
 
     " in the case of a haskell buffer, F9 is GHC-Mod check instead of normal MakeProg
     nnoremap <silent> <Leader>hc :w<CR>:GhcModCheck<CR>
-    nnoremap <silent> <F9>       :w<CR>:GhcModCheck<CR>
-    inoremap <silent> <F9>       <ESC>:w<CR>:GhcModCheck<CR>i
+    nnoremap <silent> <F8>       :w<CR>:GhcModCheck<CR>
+    inoremap <silent> <F8>       <ESC>:w<CR>:GhcModCheck<CR>i
 
     nnoremap <silent> <Leader>hl :w<CR>:GhcModLint<CR>
     nnoremap <silent> <Leader>hm :GhcModExpand<CR>
