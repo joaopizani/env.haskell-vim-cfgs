@@ -4,6 +4,7 @@ if(exists("g:neobundle#log_filename"))
 
     " Haskell bundles themselves
     NeoBundle 'eagletmt/ghcmod-vim'
+    NeoBundle 'ujihisa/neco-ghc'
     NeoBundle 'Twinside/vim-haskellFold'
     NeoBundle 'feuerbach/vim-hs-module-name'
 
