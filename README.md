@@ -24,8 +24,9 @@ guidelines:
 What exactly is included?
 -------------------------
 As said above, the functionalities are divided between plugin-independent and plugin-dependent.
-Unfortunately, there is very few useful configs you can enable to help you without using plugins, so
-_it is advisable to manage plugins in your Vim setup using [Vundle](https://github.com/gmarik/vundle)_.
+Unfortunately, there is very few useful configs you can enable to help you
+without using plugins, so _it is advisable to manage plugins in your Vim setup using_
+[NeoBundle](https://github.com/Shougo/neobundle.vim).
 
 ### Plugin-independent features ###
 As of now, there are only two very basic features which are usable without enabling plugin management
@@ -59,7 +60,7 @@ in your Vim... I hope that in the near future more features become available as 
     editing the file "haskell-vim-plugin-dependent.vim".
     - **F9**: Checks the current file using GHC-Mod (saves it if needed) and opens the QuickFix
       window in case of any errors.
-    - **F12**: Shows the type of the expression under the cursor. By pressing F12 repeatedly,
+    - **\<leader\>t**: Shows the type of the expression under the cursor. By pressing this repeatedly,
       larger expressions are selected.
     - **\<leader\>hr** Clears the selection made by the show-type command above.
     - **\<leader\>hl** Runs _HLint_ in the currently-edited file, showing any possible suggestions
