@@ -1,14 +1,8 @@
 " checks whether NeoBundle is present
 if(exists("g:neobundle#log_filename"))
+    " Loading Haskell bundles themselves
     filetype off
-
-    " Haskell bundles themselves
-    NeoBundle 'eagletmt/ghcmod-vim'
-    NeoBundle 'ujihisa/neco-ghc'
-    NeoBundle 'Twinside/vim-haskellFold'
-    NeoBundle 'feuerbach/vim-hs-module-name'
-    NeoBundle 'otters/vim-haskellConceal'
-
+    source $HASKROOT/pluginlist.vim
     filetype plugin indent on
 
 
