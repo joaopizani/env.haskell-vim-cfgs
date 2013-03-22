@@ -24,11 +24,10 @@ if(exists("g:neobundle#log_filename"))
     let g:necoghc_enable_detailed_browse = 1
 
     " key mappings - mappings for GHCMod
-    nnoremap <silent> <Leader>ht :GhcModType<CR>
     nnoremap <silent> <Leader>t  :GhcModType<CR>
+    nnoremap <silent> <Leader>hi :GhcModTypeInsert<CR>
     nnoremap <silent> <Leader>hr :GhcModTypeClear<CR>
     nnoremap <silent> <Leader>hi :GhcModInfoPreview<CR>
-    nnoremap <silent> <Leader>he :GhcModInfo<CR>
     nnoremap <silent> <Leader>hl :w<CR>:GhcModLint<CR>
     nnoremap <silent> <Leader>hm :GhcModExpand<CR>
 
