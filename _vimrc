@@ -5,7 +5,7 @@ source $HASKROOT/haskell-vim-basic.vim
 " checks whether NeoBundle is present, then load plugin-specific stuff
 if(exists("g:neobundle#log_filename"))
     filetype off
-    source $HASKROOT/pluginlist.vim
+    source $HASKROOT/plugin-dependent/pluginlist.vim
     filetype plugin indent on
 
     " Loading per-plugin files containing the configs
