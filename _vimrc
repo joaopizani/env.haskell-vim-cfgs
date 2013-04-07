@@ -8,8 +8,8 @@ if(exists("g:neobundle#log_filename"))
     source $HASKROOT/plugin-dependent/pluginlist.vim
     filetype plugin indent on
 
-    " Loading per-plugin files containing the configs
-    for f in split(glob(expand("$HASKROOT") . '/plugin-dependent/*.vim'), '\n')
+    " Loading per-plugin configs, careful not to load the pluginlist again
+    for f in split(glob(expand("$HASKROOT") . '/plugin-dependent/c*.vim'), '\n')
         exe 'source' f
     endfor
 endif
