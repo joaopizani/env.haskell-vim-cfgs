@@ -1,3 +1,0 @@
-" neco-ghc configs
-let g:necoghc_enable_detailed_browse = 1
-
